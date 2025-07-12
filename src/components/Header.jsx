@@ -60,7 +60,7 @@ export default function Header() {
           ))}
         </select>
 
-        <a href={`tel:1800115464`} className="hidden md:inline-block">
+        <a href="/" className="hidden md:inline-block">
           1800-11-5464
         </a>
         <button className="lg:hidden mobile-menu-button">
