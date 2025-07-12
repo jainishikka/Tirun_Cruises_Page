@@ -1,0 +1,6 @@
+.header a {
+  transition: color 0.2s;
+}
+.header a:hover {
+  color: #f3f4f6;
+}
