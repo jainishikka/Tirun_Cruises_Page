@@ -1,6 +1,111 @@
-.header a {
+.header {
+  background: #1e3a8a; /* bg-blue-900 */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Nav links (desktop) */
+.nav-links {
+  display: none;
+}
+.nav-links a {
+  margin-left: 2rem;
+  text-decoration: none;
   transition: color 0.2s;
 }
-.header a:hover {
+.nav-links a:hover {
   color: #f3f4f6;
+}
+
+/* Header actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+.currency-select {
+  background: #1e40af; /* bg-blue-800 */
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  margin-right: 1rem;
+}
+.phone {
+  display: none;
+  text-decoration: none;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+}
+.hamburger {
+  display: block;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.25rem;
+  position: relative;
+}
+.hamburger span {
+  background: white;
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin: 4px 0;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Toggle menu on mobile */
+.menu-toggle:checked ~ .nav-links {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1e3a8a;
+}
+.menu-toggle:checked ~ .hamburger span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.menu-toggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle:checked ~ .hamburger span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Layout at breakpoints */
+@media (min-width: 768px) {
+  .phone {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-links {
+    display: flex;
+  }
+  .hamburger,
+  .menu-toggle {
+    display: none;
+  }
 }
